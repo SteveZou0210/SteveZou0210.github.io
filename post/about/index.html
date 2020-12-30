@@ -1,0 +1,180 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>关于我 | Gridea</title>
+<link rel="shortcut icon" href="https://stevezou.github.io/favicon.ico?v=1609314254595">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://stevezou.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="关于我 | Gridea - Atom Feed" href="https://stevezou.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="我叫邹冬阳(Steve Zou), 2000年出生于河南省信阳市光山县，现就读于华中科技大学电子科技与技术专业。
+我认为C语言、围棋、贝斯、篮球都很cool。
+做博客是因为我喜欢写作和分享。
+我的一些原则
+*只主动维护双方都感觉舒服的关系
+..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://stevezou.github.io">
+  <img class="avatar" src="https://stevezou.github.io/images/avatar.png?v=1609314254595" alt="">
+  </a>
+  <h1 class="site-title">
+    Gridea
+  </h1>
+  <p class="site-description">
+    温故而知新
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              关于我
+            </h2>
+            <div class="post-info">
+              <span>
+                2019-01-25
+              </span>
+              <span>
+                1 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>我叫邹冬阳(Steve Zou), 2000年出生于河南省信阳市光山县，现就读于华中科技大学电子科技与技术专业。</p>
+<p>我认为C语言、围棋、贝斯、篮球都很cool。</p>
+<p>做博客是因为我喜欢写作和分享。</p>
+<p>我的一些原则</p>
+<p>*只主动维护双方都感觉舒服的关系<br>
+*尊重一切建设性工作的成果<br>
+*不使用抖音<br>
+*表达用词尽量精准，如果无法做到就不表达<br>
+*不自我设定deadline<br>
+*不讲荤段子<br>
+*说谢谢<br>
+我心目中一个人最重要的品质</p>
+<p>*独立<br>
+*善良<br>
+*勇敢<br>
+你可以用以下方式联系到我（推荐邮件交流）：</p>
+<p>EMAIL:<a href="mailto:stevezou0210@gmail.com">stevezou0210@gmail.com</a></p>
+<p>WEIBO:<a href="https://weibo.com/6571924431/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo">@SteveZou</a></p>
+<p>TWITTER:<a href="https://twitter.com/Steve_Zou0210">@Steve_Zou0210</a></p>
+<p>TELEGRAM:<a href="https://t.me/SteveZou">@SteveZou</a></p>
+
+              </div>
+              <div class="toc-container">
+                
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://stevezou.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
